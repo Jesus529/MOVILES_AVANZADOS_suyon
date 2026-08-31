@@ -50,3 +50,31 @@ if opcion == 1 {
     limiteDias = 10
 }
 
+// ======================================
+// FECHAS
+// ======================================
+
+print("")
+print("Ingrese la fecha de préstamo (dd/MM/yyyy):")
+let fechaPrestamo = readLine() ?? ""
+
+print("")
+print("Ingrese la fecha límite (dd/MM/yyyy):")
+let fechaLimite = readLine() ?? ""
+
+print("")
+print("Ingrese la fecha de devolución (dd/MM/yyyy):")
+let fechaDevolucion = readLine() ?? ""
+
+// ======================================
+// CONVERTIR FECHAS
+// ======================================
+
+let formato = DateFormatter()
+formato.dateFormat = "dd/MM/yyyy"
+formato.locale = Locale(identifier: "es_PE")
+
+let fechaLimiteDate = formato.date(from: fechaLimite)
+let fechaDevolucionDate = formato.date(from: fechaDevolucion)
+
+
