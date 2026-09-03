@@ -1,1 +1,50 @@
+import Foundation
+
+print("======================================")
+print("       PROYECTO DE BIBLIOTECA")
+print("======================================")
+
+struct Prestamo {
+    var libro: String
+    var usuario: String
+    var fechaPrestamo: String
+    var fechaLimite: String
+    var fechaDevolucion: String
+    var diasAtraso: Int
+    var multaTotal: Double
+    var estado: String
+    var situacion: String
+}
+
+// INGRESAR DATOS
+
+print("")
+print("Ingrese el nombre del libro:")
+let libro = readLine() ?? ""
+
+print("")
+print("Ingrese el nombre del usuario:")
+let usuario = readLine() ?? ""
+
+print("")
+print("Ingrese el tipo de usuario:")
+print("1. Alumno")
+print("2. Docente")
+print("3. Auditoría")
+
+let opcion = Int(readLine() ?? "1") ?? 1
+
+var tipoUsuario = ""
+var limiteDias = 0
+
+if opcion == 1 {
+    tipoUsuario = "Alumno"
+    limiteDias = 7
+} else if opcion == 2 {
+    tipoUsuario = "Docente"
+    limiteDias = 15
+} else {
+    tipoUsuario = "Auditoría"
+    limiteDias = 10
+}
 
