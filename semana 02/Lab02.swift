@@ -49,9 +49,9 @@ if opcion == 1 {
     limiteDias = 10
 }
 
-// ======================================
+
 // FECHAS
-// ======================================
+
 
 print("")
 print("Ingrese la fecha de préstamo (dd/MM/yyyy):")
@@ -65,9 +65,9 @@ print("")
 print("Ingrese la fecha de devolución (dd/MM/yyyy):")
 let fechaDevolucion = readLine() ?? ""
 
-// ======================================
+
 // CONVERTIR FECHAS
-// ======================================
+
 
 let formato = DateFormatter()
 formato.dateFormat = "dd/MM/yyyy"
@@ -76,9 +76,9 @@ formato.locale = Locale(identifier: "es_PE")
 let fechaLimiteDate = formato.date(from: fechaLimite)
 let fechaDevolucionDate = formato.date(from: fechaDevolucion)
 
-// ======================================
+
 // CALCULAR DÍAS DE ATRASO
-// ======================================
+
 
 var diasAtraso = 0
 
@@ -94,9 +94,9 @@ if let limite = fechaLimiteDate,
     diasAtraso = max(0, diferencia.day ?? 0)
 }
 
-// ======================================
+
 // CALCULAR MULTA PROGRESIVA
-// ======================================
+
 
 let multaNormal = 1.50
 var multaTotal = 0.0
