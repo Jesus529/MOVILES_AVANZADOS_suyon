@@ -47,4 +47,120 @@ if opcion == 1 {
     tipoUsuario = "Auditoría"
     limiteDias = 10
 }
+/ ======================================
+// FECHAS
+// ======================================
 
+print("")
+print("Ingrese la fecha de préstamo (dd/MM/yyyy):")
+let fechaPrestamo = readLine() ?? ""
+
+print("")
+print("Ingrese la fecha límite (dd/MM/yyyy):")
+let fechaLimite = readLine() ?? ""
+
+print("")
+print("Ingrese la fecha de devolución (dd/MM/yyyy):")
+let fechaDevolucion = readLine() ?? ""
+
+// ======================================
+// CONVERTIR FECHAS
+// ======================================
+
+let formato = DateFormatter()
+formato.dateFormat = "dd/MM/yyyy"
+formato.locale = Locale(identifier: "es_PE")
+
+let fechaLimiteDate = formato.date(from: fechaLimite)
+let fechaDevolucionDate = formato.date(from: fechaDevolucion)
+
+
+// ======================================
+// CALCULAR DÍAS DE ATRASO
+// ======================================
+
+var diasAtraso = 0
+
+if let limite = fechaLimiteDate,
+   let devolucion = fechaDevolucionDate {
+    
+    let diferencia = Calendar.current.dateComponents(
+        [.day],
+        from: limite,
+        to: devolucion
+    )
+    
+    diasAtraso = max(0, diferencia.day ?? 0)
+}
+
+// ======================================
+// CALCULAR MULTA PROGRESIVA
+// ======================================
+
+let multaNormal = 1.50
+var multaTotal = 0.0
+
+if diasAtraso > 0 {
+    
+    for dia in 1...diasAtraso {
+        
+        var multaDia = 0.0
+        
+        if dia <= 3 {
+            
+            // Días 1 al 3
+            multaDia = multaNormal
+            
+        } else if dia <= 6 {
+            
+            // Días 4 al 6
+            multaDia = multaNormal * 1.50
+            
+        } else {
+            
+            // Día 7 en adelante
+            multaDia = multaNormal * 2.00
+        }
+        
+        multaTotal += multaDia
+        
+        print(
+            "Día \(dia) - Multa: S/ \(String(format: "%.2f", multaDia)) - Acumulado: S/ \(String(format: "%.2f", multaTotal))"
+        )
+    }
+}
+
+// ======================================
+// ESTADO
+// ======================================
+
+var estado = ""
+var situacion = ""
+
+if diasAtraso > 0 {
+    estado = "DEVUELTO CON ATRASO"
+} else {
+    estado = "DEVUELTO A TIEMPO"
+}
+
+if diasAtraso >= 10 {
+    situacion = "USUARIO INHABILITADO"
+} else {
+    situacion = "USUARIO HABILITADO"
+}
+
+// ======================================
+// CREAR PRÉSTAMO
+// ======================================
+
+let prestamo = Prestamo(
+    libro: libro,
+    usuario: usuario,
+    fechaPrestamo: fechaPrestamo,
+    fechaLimite: fechaLimite,
+    fechaDevolucion: fechaDevolucion,
+    diasAtraso: diasAtraso,
+    multaTotal: multaTotal,
+    estado: estado,
+    situacion: situacion
+)
