@@ -1,8 +1,7 @@
 import Foundation
 
-print("======================================")
 print("       PROYECTO DE BIBLIOTECA")
-print("======================================")
+
 
 struct Prestamo {
     var libro: String
