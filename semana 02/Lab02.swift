@@ -15,9 +15,9 @@ struct Prestamo {
     var situacion: String
 }
 
-// ======================================
+
 // INGRESAR DATOS
-// ======================================
+
 
 print("")
 print("Ingrese el nombre del libro:")
