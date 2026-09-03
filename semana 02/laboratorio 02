@@ -164,3 +164,55 @@ let prestamo = Prestamo(
     estado: estado,
     situacion: situacion
 )
+// ======================================
+// MOSTRAR RESULTADO
+// ======================================
+
+print("")
+print("======================================")
+print("          DATOS DEL PRÉSTAMO")
+print("======================================")
+
+print("Libro: \(prestamo.libro)")
+print("Usuario: \(prestamo.usuario)")
+print("Tipo de usuario: \(tipoUsuario)")
+print("Fecha de préstamo: \(prestamo.fechaPrestamo)")
+print("Fecha límite: \(prestamo.fechaLimite)")
+print("Fecha de devolución: \(prestamo.fechaDevolucion)")
+print("Días de atraso: \(prestamo.diasAtraso)")
+
+print("")
+print("MULTA TOTAL: S/ \(String(format: "%.2f", prestamo.multaTotal))")
+print("ESTADO: \(prestamo.estado)")
+print("SITUACIÓN: \(prestamo.situacion)")
+
+// ======================================
+// REGLAS
+// ======================================
+
+print("")
+print("======================================")
+print("          REGLAS DE PRÉSTAMO")
+print("======================================")
+
+print("Alumno: máximo 7 días")
+print("Docente: máximo 15 días")
+print("Auditoría: máximo 10 días")
+
+print("")
+print("MULTA PROGRESIVA")
+
+print("Días 1 al 3: S/ 1.50 por día")
+print("Días 4 al 6: S/ 2.25 por día")
+print("Día 7 en adelante: S/ 3.00 por día")
+
+if diasAtraso >= 10 {
+    print("")
+    print("⚠️ USUARIO SUSPENDIDO")
+    print("No puede realizar nuevos préstamos.")
+}
+
+print("")
+print("======================================")
+print("       FIN DEL REGISTRO")
+print("======================================")
