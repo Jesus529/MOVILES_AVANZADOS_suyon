@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nav">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nav-scene">
+            <objects>
+                <navigationController id="nav" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nav-bar">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="pantalla1" kind="relationship" relationship="rootViewController" id="nav-root"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-801" y="0.0"/>
+        </scene>
+        <!--Pantalla 1-->
+        <scene sceneID="pantalla1-scene">
+            <objects>
+                <viewController id="pantalla1" customClass="ViewController" customModule="laboratorio06" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pantalla1-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla1-scroll">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
+                                <subviews>
+                                    <stackView contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla1-stack">
+                                        <rect key="frame" x="24" y="24" width="345" height="138"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="PANTALLA 1" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla1-label">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="33.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Laboratorio 06 -vargas choque" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla1-info">
+                                                <rect key="frame" x="0.0" y="45.666666666666657" width="345" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla1-text">
+                                                <rect key="frame" x="0.0" y="78" width="345" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irventa">
+                                                <rect key="frame" x="0.0" y="90" width="345" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="irventa-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                                <state key="normal" title="Calculadora de venta">
+                                                    <color key="titleColor" systemColor="tintColor"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="nuevaVenta" kind="show" identifier="irventaSegue" id="irventa-segue"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pantalla1-stack" firstAttribute="bottom" secondItem="pantalla1-content" secondAttribute="bottom" constant="-24" id="pantalla1-sc-b"/>
+                                    <constraint firstItem="pantalla1-stack" firstAttribute="leading" secondItem="pantalla1-content" secondAttribute="leading" constant="24" id="pantalla1-sc-l"/>
+                                    <constraint firstItem="pantalla1-stack" firstAttribute="trailing" secondItem="pantalla1-content" secondAttribute="trailing" constant="-24" id="pantalla1-sc-r"/>
+                                    <constraint firstItem="pantalla1-stack" firstAttribute="top" secondItem="pantalla1-content" secondAttribute="top" constant="24" id="pantalla1-sc-t"/>
+                                    <constraint firstItem="pantalla1-stack" firstAttribute="width" secondItem="pantalla1-frame" secondAttribute="width" constant="-48" id="pantalla1-width"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="pantalla1-content"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="pantalla1-frame"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pantalla1-safe"/>
+                        <color key="backgroundColor" red="0.96999999999999997" green="0.97999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pantalla1-scroll" firstAttribute="bottom" secondItem="pantalla1-safe" secondAttribute="bottom" id="pantalla1-root-bottom"/>
+                            <constraint firstItem="pantalla1-scroll" firstAttribute="leading" secondItem="pantalla1-safe" secondAttribute="leading" id="pantalla1-root-leading"/>
+                            <constraint firstItem="pantalla1-scroll" firstAttribute="top" secondItem="pantalla1-safe" secondAttribute="top" id="pantalla1-root-top"/>
+                            <constraint firstItem="pantalla1-scroll" firstAttribute="trailing" secondItem="pantalla1-safe" secondAttribute="trailing" id="pantalla1-root-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pantalla 1" id="pantalla1-item">
+                        <barButtonItem key="rightBarButtonItem" title="A Pantalla 2" id="bar-pantalla2">
+                            <connections>
+                                <segue destination="pantalla2" kind="show" identifier="showPantalla2" id="bar-pantalla2-segue"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pantalla1-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146" y="0.0"/>
+        </scene>
+        <!--Pantalla 02-->
+        <scene sceneID="pantalla2-scene">
+            <objects>
+                <viewController id="pantalla2" customClass="ViewController2" customModule="laboratorio06" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pantalla2-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla2-scroll">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
+                                <subviews>
+                                    <stackView contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla2-stack">
+                                        <rect key="frame" x="24" y="23.999999999999996" width="345" height="45.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="PANTALLA 02" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla2-label">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="33.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="pantalla2-text">
+                                                <rect key="frame" x="0.0" y="45.666666666666657" width="345" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pantalla2-stack" firstAttribute="bottom" secondItem="pantalla2-content" secondAttribute="bottom" constant="-24" id="pantalla2-sc-b"/>
+                                    <constraint firstItem="pantalla2-stack" firstAttribute="leading" secondItem="pantalla2-content" secondAttribute="leading" constant="24" id="pantalla2-sc-l"/>
+                                    <constraint firstItem="pantalla2-stack" firstAttribute="trailing" secondItem="pantalla2-content" secondAttribute="trailing" constant="-24" id="pantalla2-sc-r"/>
+                                    <constraint firstItem="pantalla2-stack" firstAttribute="top" secondItem="pantalla2-content" secondAttribute="top" constant="24" id="pantalla2-sc-t"/>
+                                    <constraint firstItem="pantalla2-stack" firstAttribute="width" secondItem="pantalla2-frame" secondAttribute="width" constant="-48" id="pantalla2-width"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="pantalla2-content"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="pantalla2-frame"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pantalla2-safe"/>
+                        <color key="backgroundColor" red="0.96999999999999997" green="0.97999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pantalla2-scroll" firstAttribute="bottom" secondItem="pantalla2-safe" secondAttribute="bottom" id="pantalla2-root-bottom"/>
+                            <constraint firstItem="pantalla2-scroll" firstAttribute="leading" secondItem="pantalla2-safe" secondAttribute="leading" id="pantalla2-root-leading"/>
+                            <constraint firstItem="pantalla2-scroll" firstAttribute="top" secondItem="pantalla2-safe" secondAttribute="top" id="pantalla2-root-top"/>
+                            <constraint firstItem="pantalla2-scroll" firstAttribute="trailing" secondItem="pantalla2-safe" secondAttribute="trailing" id="pantalla2-root-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pantalla 02" id="pantalla2-item"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pantalla2-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="0.0"/>
+        </scene>
+        <!--Nueva Venta-->
+        <scene sceneID="nuevaVenta-scene">
+            <objects>
+                <viewController id="nuevaVenta" customClass="NuevaVentaViewController" customModule="laboratorio06" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nuevaVenta-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="nuevaVenta-scroll">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
+                                <subviews>
+                                    <stackView contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="nuevaVenta-stack">
+                                        <rect key="frame" x="24" y="24" width="345" height="565.66666666666663"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="NUEVA VENTA" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="venta-heading">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Electrodoméstico" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="electrodomestico-caption">
+                                                <rect key="frame" x="0.0" y="42" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej. Refrigeradora" translatesAutoresizingMaskIntoConstraints="NO" id="electrodomestico">
+                                                <rect key="frame" x="0.0" y="72" width="345" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="electrodomestico-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Precio unitario (S/.)" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="precio-caption">
+                                                <rect key="frame" x="0.0" y="128" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej. 1000" translatesAutoresizingMaskIntoConstraints="NO" id="precio">
+                                                <rect key="frame" x="0.0" y="158" width="345" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="precio-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Cantidad" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="cantidad-caption">
+                                                <rect key="frame" x="0.0" y="214" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej. 2" translatesAutoresizingMaskIntoConstraints="NO" id="cantidad">
+                                                <rect key="frame" x="0.0" y="244" width="345" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="cantidad-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Número de meses" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="meses-caption">
+                                                <rect key="frame" x="0.0" y="300" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej. 12" translatesAutoresizingMaskIntoConstraints="NO" id="meses">
+                                                <rect key="frame" x="0.0" y="330" width="345" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="meses-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tasa de interés mensual (%)" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="tasa-caption">
+                                                <rect key="frame" x="0.0" y="386" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ej. 2" translatesAutoresizingMaskIntoConstraints="NO" id="tasa">
+                                                <rect key="frame" x="0.0" y="416" width="345" height="44"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="tasa-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="calcular">
+                                                <rect key="frame" x="0.0" y="472" width="345" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="calcular-height"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <state key="normal" title="Calcular">
+                                                    <color key="titleColor" red="0.050000000000000003" green="0.28999999999999998" blue="0.65000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="resultado" kind="show" identifier="showResultado" id="calcular-segue"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="IGV: 18 %. Interés simple mensual sobre el monto base." lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="venta-nota">
+                                                <rect key="frame" x="0.0" y="532" width="345" height="33.666666666666629"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nuevaVenta-stack" firstAttribute="bottom" secondItem="nuevaVenta-content" secondAttribute="bottom" constant="-24" id="nuevaVenta-sc-b"/>
+                                    <constraint firstItem="nuevaVenta-stack" firstAttribute="leading" secondItem="nuevaVenta-content" secondAttribute="leading" constant="24" id="nuevaVenta-sc-l"/>
+                                    <constraint firstItem="nuevaVenta-stack" firstAttribute="trailing" secondItem="nuevaVenta-content" secondAttribute="trailing" constant="-24" id="nuevaVenta-sc-r"/>
+                                    <constraint firstItem="nuevaVenta-stack" firstAttribute="top" secondItem="nuevaVenta-content" secondAttribute="top" constant="24" id="nuevaVenta-sc-t"/>
+                                    <constraint firstItem="nuevaVenta-stack" firstAttribute="width" secondItem="nuevaVenta-frame" secondAttribute="width" constant="-48" id="nuevaVenta-width"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="nuevaVenta-content"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="nuevaVenta-frame"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nuevaVenta-safe"/>
+                        <color key="backgroundColor" red="0.96999999999999997" green="0.97999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nuevaVenta-scroll" firstAttribute="bottom" secondItem="nuevaVenta-safe" secondAttribute="bottom" id="nuevaVenta-root-bottom"/>
+                            <constraint firstItem="nuevaVenta-scroll" firstAttribute="leading" secondItem="nuevaVenta-safe" secondAttribute="leading" id="nuevaVenta-root-leading"/>
+                            <constraint firstItem="nuevaVenta-scroll" firstAttribute="top" secondItem="nuevaVenta-safe" secondAttribute="top" id="nuevaVenta-root-top"/>
+                            <constraint firstItem="nuevaVenta-scroll" firstAttribute="trailing" secondItem="nuevaVenta-safe" secondAttribute="trailing" id="nuevaVenta-root-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nueva Venta" id="nuevaVenta-item"/>
+                    <connections>
+                        <outlet property="tfCantidad" destination="cantidad" id="cantidad-outlet"/>
+                        <outlet property="tfElectrodomestico" destination="electrodomestico" id="electrodomestico-outlet"/>
+                        <outlet property="tfMeses" destination="meses" id="meses-outlet"/>
+                        <outlet property="tfPrecio" destination="precio" id="precio-outlet"/>
+                        <outlet property="tfTasa" destination="tasa" id="tasa-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuevaVenta-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-329" y="2013"/>
+        </scene>
+        <!--Resultado-->
+        <scene sceneID="resultado-scene">
+            <objects>
+                <viewController id="resultado" customClass="ResultadoViewController" customModule="laboratorio06" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="resultado-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="resultado-scroll">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
+                                <subviews>
+                                    <stackView contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="resultado-stack">
+                                        <rect key="frame" x="24" y="24" width="345" height="454"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="RESULTADO" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="resultado-heading">
+                                                <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Subtotal" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblSubtotal-caption">
+                                                <rect key="frame" x="0.0" y="42" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="S/. 0.00" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblSubtotal">
+                                                <rect key="frame" x="0.0" y="72" width="345" height="28.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="IGV (18 %)" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblIGV-caption">
+                                                <rect key="frame" x="0.0" y="112.66666666666669" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="S/. 0.00" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblIGV">
+                                                <rect key="frame" x="0.0" y="142.66666666666669" width="345" height="28.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Monto base" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblBase-caption">
+                                                <rect key="frame" x="0.0" y="183.33333333333331" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="S/. 0.00" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblBase">
+                                                <rect key="frame" x="0.0" y="213.33333333333331" width="345" height="28.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Intereses totales" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblIntereses-caption">
+                                                <rect key="frame" x="0.0" y="254" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="S/. 0.00" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblIntereses">
+                                                <rect key="frame" x="0.0" y="284" width="345" height="28.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Total a pagar" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblTotal-caption">
+                                                <rect key="frame" x="0.0" y="324.66666666666663" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="S/. 0.00" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblTotal">
+                                                <rect key="frame" x="0.0" y="354.66666666666663" width="345" height="28.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Cuota mensual" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblCuota-caption">
+                                                <rect key="frame" x="0.0" y="395.33333333333337" width="345" height="18"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="S/. 0.00" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="lblCuota">
+                                                <rect key="frame" x="0.0" y="425.33333333333337" width="345" height="28.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <color key="textColor" red="0.089999999999999997" green="0.14000000000000001" blue="0.23999999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="resultado-stack" firstAttribute="bottom" secondItem="resultado-content" secondAttribute="bottom" constant="-24" id="resultado-sc-b"/>
+                                    <constraint firstItem="resultado-stack" firstAttribute="leading" secondItem="resultado-content" secondAttribute="leading" constant="24" id="resultado-sc-l"/>
+                                    <constraint firstItem="resultado-stack" firstAttribute="trailing" secondItem="resultado-content" secondAttribute="trailing" constant="-24" id="resultado-sc-r"/>
+                                    <constraint firstItem="resultado-stack" firstAttribute="top" secondItem="resultado-content" secondAttribute="top" constant="24" id="resultado-sc-t"/>
+                                    <constraint firstItem="resultado-stack" firstAttribute="width" secondItem="resultado-frame" secondAttribute="width" constant="-48" id="resultado-width"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="resultado-content"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="resultado-frame"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="resultado-safe"/>
+                        <color key="backgroundColor" red="0.96999999999999997" green="0.97999999999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="resultado-scroll" firstAttribute="bottom" secondItem="resultado-safe" secondAttribute="bottom" id="resultado-root-bottom"/>
+                            <constraint firstItem="resultado-scroll" firstAttribute="leading" secondItem="resultado-safe" secondAttribute="leading" id="resultado-root-leading"/>
+                            <constraint firstItem="resultado-scroll" firstAttribute="top" secondItem="resultado-safe" secondAttribute="top" id="resultado-root-top"/>
+                            <constraint firstItem="resultado-scroll" firstAttribute="trailing" secondItem="resultado-safe" secondAttribute="trailing" id="resultado-root-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Resultado" id="resultado-item"/>
+                    <connections>
+                        <outlet property="lblBase" destination="lblBase" id="lblBase-outlet"/>
+                        <outlet property="lblCuota" destination="lblCuota" id="lblCuota-outlet"/>
+                        <outlet property="lblIGV" destination="lblIGV" id="lblIGV-outlet"/>
+                        <outlet property="lblIntereses" destination="lblIntereses" id="lblIntereses-outlet"/>
+                        <outlet property="lblSubtotal" destination="lblSubtotal" id="lblSubtotal-outlet"/>
+                        <outlet property="lblTotal" destination="lblTotal" id="lblTotal-outlet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="resultado-responder" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="2000"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
