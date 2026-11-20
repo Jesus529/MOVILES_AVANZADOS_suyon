@@ -8,6 +8,13 @@ struct AuthView: View {
     @State private var name = ""
     @State private var registering = false
 
+    private var passwordContentType: UITextContentType? {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-lab14-ui-testing") { return nil }
+        #endif
+        return registering ? .newPassword : .password
+    }
+
     var body: some View {
         NavigationStack {
             Group {
@@ -34,7 +41,8 @@ struct AuthView: View {
                                     .textInputAutocapitalization(.never).autocorrectionDisabled()
                                     .accessibilityIdentifier("email")
                                 SecureField("Contraseña", text: $password)
-                                    .textContentType(registering ? .newPassword : .password)
+                                    .textContentType(passwordContentType)
+                                    .textInputAutocapitalization(.never).autocorrectionDisabled()
                                     .accessibilityIdentifier("password")
                             }.textFieldStyle(.roundedBorder)
                             Button {

@@ -9,6 +9,7 @@ final class LaboratorioCapturasTests: XCTestCase {
     }
 
     func testCapturarLaboratorioConDosUsuarios() {
+        app.launchArguments.append("-lab14-ui-testing")
         app.launch()
         if app.buttons["signOut"].waitForExistence(timeout: 5) { app.buttons["signOut"].tap() }
         XCTAssertTrue(app.textFields["email"].waitForExistence(timeout: 30))
@@ -17,7 +18,7 @@ final class LaboratorioCapturasTests: XCTestCase {
         let run = UUID().uuidString.lowercased()
         let emailA = "lab14-a-\(run)@example.com"
         let emailB = "lab14-b-\(run)@example.com"
-        let password = "Lab14!" + UUID().uuidString
+        let password = "lab14" + String(UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased().prefix(11))
         register(name: "Estudiante A", email: emailA, password: password, captureForm: true)
         capture("03-usuario-A-autenticado")
         let firstMessage = "Hola desde el usuario A · " + String(run.prefix(8))
@@ -87,8 +88,19 @@ final class LaboratorioCapturasTests: XCTestCase {
 
     private func fill(_ field: XCUIElement, with text: String) {
         XCTAssertTrue(field.waitForExistence(timeout: 10))
-        field.tap()
-        field.typeText(text)
+        for _ in 0..<3 {
+            field.tap()
+            if let current = field.value as? String, !current.isEmpty, current != field.placeholderValue {
+                field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: current.count + 2))
+            }
+            field.typeText(text)
+            let predicate = field.elementType == .secureTextField
+                ? NSPredicate(format: "value.length == %d", text.count)
+                : NSPredicate(format: "value == %@", text)
+            let populated = XCTNSPredicateExpectation(predicate: predicate, object: field)
+            if XCTWaiter.wait(for: [populated], timeout: 5) == .completed { return }
+        }
+        XCTFail("El teclado del simulador no completó el campo de prueba.")
     }
 
     private func dismissKeyboard() {
