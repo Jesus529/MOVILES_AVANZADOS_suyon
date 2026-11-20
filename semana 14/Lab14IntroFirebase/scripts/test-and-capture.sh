@@ -12,4 +12,4 @@ xcodebuild test \
   -only-testing:Lab14IntroFirebaseUITests/LaboratorioCapturasTests/testCapturarLaboratorioConDosUsuarios \
   -derivedDataPath .build-output \
   -resultBundlePath .build-output/Lab14.xcresult \
-  ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=NO 2>&1 | tee evidence/pruebas-ui.log
+  ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=YES CODE_SIGN_IDENTITY=- 2>&1 | tee evidence/pruebas-ui.log
