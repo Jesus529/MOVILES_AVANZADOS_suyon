@@ -1,0 +1,24 @@
+// Laboratorio: sala compartida entre usuarios autenticados.
+// messages/{id}: text (1..2000), userId (1..128), authorName (1..40),
+// timestamp (fecha del servidor). Todos los campos son obligatorios e inmutables.
+// No contiene correos ni contraseñas. No se permiten ediciones ni eliminaciones.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuthenticated() { return request.auth != null; }
+    function isOwner(uid) { return isAuthenticated() && uid == request.auth.uid; }
+    function isValidMessage(data) {
+      return data.keys().hasAll(['text', 'userId', 'authorName', 'timestamp'])
+        && data.keys().hasOnly(['text', 'userId', 'authorName', 'timestamp'])
+        && data.text is string && data.text.size() > 0 && data.text.size() <= 2000
+        && data.userId is string && data.userId.size() > 0 && data.userId.size() <= 128
+        && data.authorName is string && data.authorName.size() > 0 && data.authorName.size() <= 40
+        && data.timestamp is timestamp && data.timestamp == request.time;
+    }
+    match /messages/{messageId} {
+      allow read: if isAuthenticated();
+      allow create: if isOwner(request.resource.data.userId) && isValidMessage(request.resource.data);
+      allow update, delete: if false;
+    }
+  }
+}

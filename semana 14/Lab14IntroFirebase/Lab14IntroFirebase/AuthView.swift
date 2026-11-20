@@ -14,11 +14,8 @@ struct AuthView: View {
                 if auth.isCheckingSession {
                     ProgressView("Comprobando sesión…")
                 } else if let user = auth.user {
-                    VStack(spacing: 20) {
-                        Text("Sesión iniciada").font(.title.bold())
-                        Text(user.email ?? "")
-                        Button("Sign Out", action: auth.signOut)
-                    }.padding()
+                    MessagesView(userID: user.uid, email: user.email ?? "", signOut: auth.signOut)
+                        .id(user.uid)
                 } else {
                     ScrollView {
                         VStack(alignment: .leading, spacing: 24) {
