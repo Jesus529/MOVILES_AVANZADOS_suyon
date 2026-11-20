@@ -1,0 +1,10 @@
+{
+  "project": "Lab14IntroFirebase",
+  "files": 29,
+  "swiftFiles": 7,
+  "pbxproj": "Parsed with xcode parser; app/UI-test targets, dependencies, synchronized sources and linker flags checked",
+  "clientConfig": "Checked separately with plistlib",
+  "firebaseRules": "Compiled successfully by Firebase; published",
+  "iosBuild": "NOT RUN: Windows has no Apple SDK or Xcode",
+  "runtimeTests": "NOT RUN: UI-test target and GitHub Actions workflow included; execution requires a macOS runner"
+}
