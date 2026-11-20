@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31063FD39AA66C4544CA3F18 = {isa = PBXBuildFile; productRef = 918FE5FAAACE31FF9D76A6C1 /* FirebaseCore */; };
+		5A0338245053DC2EE3FFFBCB = {isa = PBXBuildFile; productRef = A2DD71076266B6D80C82DF86 /* FirebaseAuth */; };
+		2DC116B7ACDCD6A6A9F40C33 = {isa = PBXBuildFile; productRef = 90B63C83AB19A3EE859D8358 /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A8792157CB4F27FB949C035F = {isa = PBXFileReference; explicitFileType = "wrapper.application"; includeInIndex = 0; path = "Lab14IntroFirebase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		41CF6794BA4200B839C53531 = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Lab14IntroFirebase;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2AA269EB967A8853A258BFA = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31063FD39AA66C4544CA3F18 /* PBXBuildFile */,
+				5A0338245053DC2EE3FFFBCB /* PBXBuildFile */,
+				2DC116B7ACDCD6A6A9F40C33 /* PBXBuildFile */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A3E27B8CA818264D75C8D81 = {
+			isa = PBXGroup;
+			children = (
+				A8792157CB4F27FB949C035F /* Lab14IntroFirebase.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD936FCBED631FA67E05C3EA = {
+			isa = PBXGroup;
+			children = (
+				41CF6794BA4200B839C53531 /* Lab14IntroFirebase */,
+				0A3E27B8CA818264D75C8D81 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		34A04005BCAF206EEC990BD9 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83363C6FC4A4F75AD82E6812 /* XCConfigurationList */;
+			buildPhases = (
+				878A52FC5FF6A57D50B7B870 /* PBXSourcesBuildPhase */,
+				E2AA269EB967A8853A258BFA /* PBXFrameworksBuildPhase */,
+				41D311A605520FC7B8B9A980 /* PBXResourcesBuildPhase */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				41CF6794BA4200B839C53531 /* Lab14IntroFirebase */,
+			);
+			name = Lab14IntroFirebase;
+			packageProductDependencies = (
+				918FE5FAAACE31FF9D76A6C1 /* FirebaseCore */,
+				A2DD71076266B6D80C82DF86 /* FirebaseAuth */,
+				90B63C83AB19A3EE859D8358 /* FirebaseFirestore */,
+			);
+			productName = Lab14IntroFirebase;
+			productReference = A8792157CB4F27FB949C035F /* Lab14IntroFirebase.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		244210E48437B6556980A702 = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					34A04005BCAF206EEC990BD9 = {
+						CreatedOnToolsVersion = "26.2";
+					};
+				};
+			};
+			buildConfigurationList = 40C96672416B5596D46C2BD2 /* XCConfigurationList */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = es;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				es,
+				en,
+				Base,
+			);
+			mainGroup = AD936FCBED631FA67E05C3EA /* PBXGroup */;
+			packageReferences = (
+				618B8C8DE24C7B03F7A150FA /* XCRemoteSwiftPackageReference */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0A3E27B8CA818264D75C8D81 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34A04005BCAF206EEC990BD9 /* Lab14IntroFirebase */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41D311A605520FC7B8B9A980 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		878A52FC5FF6A57D50B7B870 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		73EBF6644258C120893E685D = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "16.0";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = "5.0";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+			};
+		};
+		0B0C687DF8B6B8DC790B519C = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = "16.0";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = "5.0";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+			};
+		};
+		6C7EFF6369083C8E1F2B1994 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pe.edu.tecsup.dma.Lab14IntroFirebase";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Lab 14 Firebase";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				CODE_SIGN_STYLE = Automatic;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SWIFT_VERSION = "5.0";
+				MARKETING_VERSION = "1.0.0";
+				CURRENT_PROJECT_VERSION = 1;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			};
+		};
+		DD75E2CB1C510A828AC72D96 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "pe.edu.tecsup.dma.Lab14IntroFirebase";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Lab 14 Firebase";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				CODE_SIGN_STYLE = Automatic;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SWIFT_VERSION = "5.0";
+				MARKETING_VERSION = "1.0.0";
+				CURRENT_PROJECT_VERSION = 1;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			};
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40C96672416B5596D46C2BD2 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73EBF6644258C120893E685D /* Debug */,
+				0B0C687DF8B6B8DC790B519C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83363C6FC4A4F75AD82E6812 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C7EFF6369083C8E1F2B1994 /* Debug */,
+				DD75E2CB1C510A828AC72D96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		618B8C8DE24C7B03F7A150FA = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = "13.2.0";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		918FE5FAAACE31FF9D76A6C1 = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618B8C8DE24C7B03F7A150FA /* XCRemoteSwiftPackageReference */;
+			productName = FirebaseCore;
+		};
+		A2DD71076266B6D80C82DF86 = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618B8C8DE24C7B03F7A150FA /* XCRemoteSwiftPackageReference */;
+			productName = FirebaseAuth;
+		};
+		90B63C83AB19A3EE859D8358 = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618B8C8DE24C7B03F7A150FA /* XCRemoteSwiftPackageReference */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 244210E48437B6556980A702;
+}
