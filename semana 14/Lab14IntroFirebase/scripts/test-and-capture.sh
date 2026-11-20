@@ -7,9 +7,9 @@ xcodebuild test \
   -project Lab14IntroFirebase.xcodeproj \
   -scheme Lab14IntroFirebase \
   -configuration Debug \
-  -destination "platform=iOS Simulator,id=$DEVICE_ID" \
+  -destination "platform=iOS Simulator,id=$DEVICE_ID,arch=$(uname -m)" \
   -parallel-testing-enabled NO \
   -only-testing:Lab14IntroFirebaseUITests/LaboratorioCapturasTests/testCapturarLaboratorioConDosUsuarios \
   -derivedDataPath .build-output \
   -resultBundlePath .build-output/Lab14.xcresult \
-  CODE_SIGNING_ALLOWED=NO 2>&1 | tee evidence/pruebas-ui.log
+  ONLY_ACTIVE_ARCH=YES CODE_SIGNING_ALLOWED=NO 2>&1 | tee evidence/pruebas-ui.log

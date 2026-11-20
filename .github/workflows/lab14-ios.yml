@@ -1,51 +1,65 @@
 name: Compilar iOS y generar capturas
 on:
-  workflow_dispatch:
+  workflow_dispatch: null
   push:
-    branches: [main, master]
+    branches:
+      - main
+      - master
 permissions:
   contents: read
 jobs:
   build:
     runs-on: macos-latest
     timeout-minutes: 60
-    defaults:
-      run:
-        working-directory: "semana 14/Lab14IntroFirebase"
     steps:
       - uses: actions/checkout@v4
       - name: Comprobar Xcode
         run: xcodebuild -version
+      - name: Preparar simulador en paralelo
+        run: nohup bash scripts/warm-simulator.sh > "$RUNNER_TEMP/lab14-simulator.log"
+          2>&1 &
       - name: Resolver dependencias
-        run: xcodebuild -resolvePackageDependencies -project Lab14IntroFirebase.xcodeproj -scheme Lab14IntroFirebase
+        run: xcodebuild -resolvePackageDependencies -project
+          Lab14IntroFirebase.xcodeproj -scheme Lab14IntroFirebase
       - name: Compilar para simulador
-        run: |
+        run: >
           set -o pipefail
+
           mkdir -p evidence
-          xcodebuild -project Lab14IntroFirebase.xcodeproj -scheme Lab14IntroFirebase -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath .build-output CODE_SIGNING_ALLOWED=NO build 2>&1 | tee evidence/build.log
+
+          xcodebuild -project Lab14IntroFirebase.xcodeproj -scheme
+          Lab14IntroFirebase -configuration Debug -sdk iphonesimulator
+          -destination 'generic/platform=iOS Simulator' -derivedDataPath
+          .build-output ARCHS="$(uname -m)" ONLY_ACTIVE_ARCH=YES
+          CODE_SIGNING_ALLOWED=NO build 2>&1 | tee evidence/build.log
       - name: Iniciar simulador y obtener captura real
         run: bash scripts/capture-simulator.sh
       - name: Probar registro, acceso y mensajes con dos usuarios
         run: bash scripts/test-and-capture.sh
       - name: Exportar las capturas de las pruebas
         if: always()
-        run: |
+        run: >
           if [ -d .build-output/Lab14.xcresult ]; then
             mkdir -p evidence/capturas
             xcrun xcresulttool export attachments --path .build-output/Lab14.xcresult --output-path evidence/capturas
           fi
       - name: Empaquetar aplicación conservando permisos
         if: success()
-        run: ditto -c -k --sequesterRsrc --keepParent .build-output/Build/Products/Debug-iphonesimulator/Lab14IntroFirebase.app Lab14IntroFirebase-simulador.zip
+        run: ditto -c -k --sequesterRsrc --keepParent
+          .build-output/Build/Products/Debug-iphonesimulator/Lab14IntroFirebase.app
+          Lab14IntroFirebase-simulador.zip
       - name: Guardar aplicación de simulador
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: Lab14-aplicacion-simulador
-          path: "semana 14/Lab14IntroFirebase/Lab14IntroFirebase-simulador.zip"
+          path: semana 14/Lab14IntroFirebase/Lab14IntroFirebase-simulador.zip
       - name: Guardar capturas y registro
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Lab14-evidencias
-          path: "semana 14/Lab14IntroFirebase/evidence/"
+          path: semana 14/Lab14IntroFirebase/evidence/
+    defaults:
+      run:
+        working-directory: semana 14/Lab14IntroFirebase
